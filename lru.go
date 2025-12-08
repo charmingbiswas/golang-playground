@@ -67,5 +67,6 @@ func (this *LRUCache) Put(key int, value int) {
 
 		// remove from linked list
 		this.list.Remove(lastElement)
+		this.capacity++
 	}
 }
