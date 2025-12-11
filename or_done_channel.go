@@ -10,12 +10,13 @@ func Or(channels ...<-chan any) <-chan any {
 	case 0:
 		return nil
 	case 1:
-		return channels[1]
+		return channels[0]
 	}
 
 	orDone := make(chan any)
 
 	go func() {
+		defer close(orDone)
 		switch len(channels) {
 		case 2:
 			select {
