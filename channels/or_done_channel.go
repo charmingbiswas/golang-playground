@@ -1,4 +1,4 @@
-package main
+package channels
 
 // This file contains implementation of or channels and how they work
 // When you have to listen to multiple channels, or channel pattern combines them together and return one channel which you can listen to
