@@ -2,7 +2,7 @@ package channels
 
 // This file contains implementation of or channels and how they work
 // When you have to listen to multiple channels, or channel pattern combines them together and return one channel which you can listen to
-// When ANY channel receives data, it closes all other channels
+// When ANY channel closes the done channel, it closes all other channels
 
 func Or(channels ...<-chan any) <-chan any {
 	// base condition
